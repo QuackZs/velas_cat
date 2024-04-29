@@ -6,3 +6,6 @@ import 'bootstrap';
 
  // Added: Popper.js dependency for popover support in Bootstrap
 import '@popperjs/core';
+
+import $ from 'jquery';
+window.$ = window.jQuery = $;
