@@ -4,16 +4,26 @@ namespace App\Http\Controllers;
 
 use App\Models\Produto;
 use Illuminate\Http\Request;
+use DataTables;
+
 
 class ProdutoController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
+        if ($request->ajax()) {
+            return DataTables::eloquent(Produto::query())
+            ->addColumn('action', function($produto) {
+                return '<a href="' . route('produto.edit', $produto) . '">Editar</a>';
+            })->toJson();
+        }
         return view('produto.index');
     }
+
+    
 
     /**
      * Show the form for creating a new resource.
@@ -44,17 +54,21 @@ class ProdutoController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Produto $produto)
     {
-        //
+        return view('produto/edit',[
+            'produto' => $produto
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Produto $produto)
     {
-        //
+        $produto->update($request->except('_token'));
+
+        return redirect()->route('produto.index');
     }
 
     /**

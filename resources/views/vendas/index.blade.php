@@ -6,12 +6,12 @@
              <div class="card">
                 <div class="card-header">
                     <div class="d-flex justify-content-between">
-                        <span>Produtos</span>
-                        <a href="{{ route('produto.create') }}" class="btn btn-primary">Novo Produto</a>
+                        <span>Compras/Vendas</span>
+                        <a href="{{ route('venda.create') }}" class="btn btn-primary">Nova Compra/Venda</a>
                     </div>
                     
                 </div>
-                <div class="card-body">
+               {{--  <div class="card-body">
                     <table id="myTable" class="display">
                         <thead>
                             <th>Nome</th>
@@ -19,12 +19,12 @@
                             <th>Gramas/Mililitros</th>
                         </thead>
                     </table>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
 @endsection
-
+{{-- 
 @section('scripts')
     <script type="module">
         $('#myTable').DataTable({
@@ -40,4 +40,4 @@
             ]
         });
     </script>
-@endsection
+@endsection --}}

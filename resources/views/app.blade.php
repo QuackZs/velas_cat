@@ -22,7 +22,7 @@
                             <a class="nav-link" href="#">Cálculo de Portes</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Vendas</a>
+                            <a class="nav-link" href="{{ route('venda.index') }}">Compras/Vendas</a>
                         </li>
                     </ul>
                 </div>

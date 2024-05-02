@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProdutoController;
+use App\Http\Controllers\VendaController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -10,4 +11,9 @@ Route::get('/', function () {
 Route::resources([
     'produto' => ProdutoController::class,
 ]);
+
+Route::resources([
+    'venda' => VendaController::class,
+]);
+
 
